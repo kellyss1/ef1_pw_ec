@@ -1,11 +1,11 @@
 <template>
   
   <div>
-    <JuegoPokemon @puntaje-actualizado="actualizarPuntaje"/>
+    <JuegoPokemon />
     <!-- aparece si tu puntaje es mayor a 10 -->
-    <MensajeWin v-if="puntaje > 10" />
+    <MensajeWin />
     <!-- aparece si tu puntaje es menor o igual a 10 -->
-    <MensajeLose v-else />
+    <MensajeLose/>
   </div>
 </template>
 
@@ -20,26 +20,7 @@ export default {
     MensajeWin,
     MensajeLose,
   },
-  data() {
-    return {
-      puntaje: 0,
-      intento: 0,
-    };
-  },
-  methods: {
-    actualizarPuntaje({ nuevoPuntaje, nuevoIntento }) {
-      this.puntaje = nuevoPuntaje;
-      this.intento = nuevoIntento;
-    },
-  },
-  watch: {
-    puntaje(newPuntaje) {
-      if (newPuntaje > 10) {
-        // Trigger any additional logic for winning
-        console.log("You win!");
-      }
-    },
-  },
+
 };
 </script>
 
